@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Demonstração: Recuperar Elementos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <span class="highlight-lab">LAB365</span> -
+          <span class="highlight-senai">SENAI</span>
+        </h1>
+        <h2>Demonstração DOM: Recuperar Elementos</h2>
+      </header>
+
+      <nav class="quick-nav">
+        <a href="index.html" class="nav-link active">Recuperar Elementos</a>
+        <a href="listar_elementos.html" class="nav-link">Listar Elementos</a>
+        <a href="modificar_elementos.html" class="nav-link"
+          >Modificar Elementos</a
+        >
+      </nav>
+
+      <main class="main-content">
+        <blockquote class="objective-highlight">
+          <strong>Objetivo:</strong> Demonstrar como selecionar e acessar o
+          conteúdo de diferentes elementos HTML no DOM utilizando os métodos
+          JavaScript.
+        </blockquote>
+
+        <p>
+          <strong>Nesta demonstração, vamos:</strong>
+        </p>
+        <ol class="task-list">
+          <li>
+            Selecionar o <code>&lt;h1&gt;</code> principal usando
+            <code>querySelector()</code> e logar seu conteúdo.
+          </li>
+          <li>
+            Acessar o parágrafo com <code>id="paragrafo-unico"</code> usando
+            <code>getElementById()</code> e logar seu <code>textContent</code>.
+          </li>
+          <li>
+            Obter <strong>todos</strong> os itens da lista
+            (<code>&lt;li&gt;</code>) com a classe
+            <code>item-lista</code> usando <code>querySelectorAll()</code> e
+            explorar a coleção.
+          </li>
+          <li>
+            Capturar <strong>todos</strong> os elementos
+            <code>&lt;span&gt;</code> usando
+            <code>getElementsByTagName()</code>.
+          </li>
+          <li>
+            Verificar o conteúdo (inclusive HTML) de uma <code>div</code> com a
+            classe <code>info-box</code> usando
+            <code>getElementsByClassName()</code> e sua propriedade
+            <code>innerHTML</code>.
+          </li>
+          <li>
+            Acessar o <code>value</code> de um campo de input com
+            <code>id="nome-usuario"</code>.
+          </li>
+        </ol>
+
+        <div class="practice-section">
+          <h3 id="titulo-secao">Seção de Conteúdo para Recuperação</h3>
+          <p id="paragrafo-unico">
+            Este é um parágrafo de exemplo para ser selecionado por ID.
+          </p>
+
+          <ul class="lista-de-compras">
+            <li class="item-lista">Maçã <span>(fruta)</span></li>
+            <li class="item-lista">Leite <span>(laticínio)</span></li>
+            <li class="item-lista">Pão <span>(padaria)</span></li>
+          </ul>
+
+          <div class="info-box">
+            <p>Esta é uma <strong>caixa de informação</strong>.</p>
+            <span>Importante!</span>
+          </div>
+
+          <label for="nome-usuario">Nome:</label>
+          <input type="text" id="nome-usuario" value="Visitante" />
+        </div>
+
+        <p class="instruction">
+          Acompanhe no console (<code>F12</code>) os resultados das seleções e
+          logs!
+        </p>
+
+        <div class="nav-buttons">
+          <a href="listar_elementos.html" class="nav-button next"
+            >Próximo: Listar Elementos &gt;</a
+          >
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 Sua Turma - Lab365 / SENAI</p>
+        <p>Semana 5 - Demonstração DOM</p>
+      </footer>
+    </div>
+    <script src="./scripts/recuperar_elementos.js"></script>
+  </body>
+</html>

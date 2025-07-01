@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Demonstração: Modificar Elementos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <span class="highlight-lab">LAB365</span> -
+          <span class="highlight-senai">SENAI</span>
+        </h1>
+        <h2>Demonstração DOM: Modificar Elementos</h2>
+      </header>
+      <nav class="quick-nav">
+        <a href="index.html" class="nav-link">Recuperar Elementos</a>
+        <a href="listar_elementos.html" class="nav-link">Listar Elementos</a>
+        <a href="modificar_elementos.html" class="nav-link active"
+          >Modificar Elementos</a
+        >
+      </nav>
+      <main class="main-content">
+        <blockquote class="objective-highlight">
+          <strong>Objetivo:</strong> Demonstrar como alterar dinamicamente o
+          conteúdo de texto, HTML ou o valor de elementos da página usando
+          JavaScript.
+        </blockquote>
+
+        <p>
+          <strong>Nesta demonstração, vamos:</strong>
+        </p>
+        <ol class="task-list">
+          <li>
+            Modificar o <code>textContent</code> do parágrafo com
+            <code>id="texto-para-mudar"</code> para "O texto deste parágrafo foi
+            alterado pelo JS!".
+          </li>
+          <li>
+            Alterar o <code>innerHTML</code> da <code>div</code> com
+            <code>id="area-html"</code> para incluir um novo HTML (ex: um
+            <code>&lt;strong&gt;</code> e um link).
+          </li>
+          <li>
+            Definir um novo <code>value</code> para o campo de input com
+            <code>id="input-exemplo"</code> para "Valor Modificado".
+          </li>
+          <li>
+            (Opcional) Usar um botão para acionar todas essas modificações.
+          </li>
+        </ol>
+
+        <div class="practice-section">
+          <h3 class="section-title">Área de Modificação</h3>
+          <p id="texto-para-mudar">
+            Este é o texto original que será modificado pelo JavaScript.
+          </p>
+
+          <div
+            id="area-html"
+            style="border: 1px dashed #ccc; padding: 10px; margin-top: 20px"
+          >
+            Conteúdo HTML original.
+          </div>
+
+          <label for="input-exemplo">Campo de Texto:</label>
+          <input
+            type="text"
+            id="input-exemplo"
+            value="Valor Inicial do Input"
+          />
+
+          <button id="btn-modificar-tudo" style="margin-top: 20px">
+            Clique para Modificar
+          </button>
+        </div>
+
+        <p class="instruction">
+          Observe as mudanças na página após o JavaScript ser executado ou o
+          botão ser clicado!
+        </p>
+
+        <div class="nav-buttons">
+          <a href="listar_elementos.html" class="nav-button prev"
+            >&lt; Anterior: Listar Elementos</a
+          >
+          <a href="index.html" class="nav-button next"
+            >Próximo: Exercício de Imagem &gt;</a
+          >
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 Sua Turma - Lab365 / SENAI</p>
+        <p>Semana 5 - Demonstração DOM</p>
+      </footer>
+    </div>
+    <script src="./scripts/modificar_elementos.js"></script>
+  </body>
+</html>

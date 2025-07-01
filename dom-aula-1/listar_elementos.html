@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Demonstração: Listar Elementos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <span class="highlight-lab">LAB365</span> -
+          <span class="highlight-senai">SENAI</span>
+        </h1>
+        <h2>Demonstração DOM: Listar Elementos</h2>
+      </header>
+      <nav class="quick-nav">
+        <a href="index.html" class="nav-link">Recuperar Elementos</a>
+        <a href="listar_elementos.html" class="nav-link active"
+          >Listar Elementos</a
+        >
+        <a href="modificar_elementos.html" class="nav-link"
+          >Modificar Elementos</a
+        >
+      </nav>
+      <main class="main-content">
+        <blockquote class="objective-highlight">
+          <strong>Objetivo:</strong> Demonstrar como selecionar coleções de
+          elementos e iterar sobre eles para exibir seus conteúdos de forma
+          organizada no console.
+        </blockquote>
+
+        <p>
+          <strong>Nesta demonstração, vamos:</strong>
+        </p>
+        <ol class="task-list">
+          <li>
+            Selecionar todos os títulos de produtos por classe e exibir seus
+            textos.
+          </li>
+          <li>
+            Percorrer todos os "cards" de produto (<code>&lt;div&gt;</code> com
+            a classe <code>card-item</code>) e logar o conteúdo completo de cada
+            um.
+          </li>
+          <li>
+            Obter todos os botões da página (tag <code>&lt;button&gt;</code>) e
+            listar seus <code>id</code> e <code>textContent</code>.
+          </li>
+        </ol>
+
+        <div class="practice-section">
+          <h3 class="section-title">Lista de Produtos</h3>
+          <div class="product-grid">
+            <div class="card-item" id="produto-1">
+              <h4 class="produto-titulo">Notebook X</h4>
+              <p class="produto-preco">R$ 3500.00</p>
+              <button id="add-carrinho-1">Adicionar</button>
+            </div>
+            <div class="card-item" id="produto-2">
+              <h4 class="produto-titulo">Mouse Gamer</h4>
+              <p class="produto-preco">R$ 120.00</p>
+              <button id="add-carrinho-2">Adicionar</button>
+            </div>
+            <div class="card-item" id="produto-3">
+              <h4 class="produto-titulo">Teclado Mecânico</h4>
+              <p class="produto-preco">R$ 400.00</p>
+              <button id="add-carrinho-3">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <p class="instruction">
+          Acompanhe no console (<code>F12</code>) os resultados das suas
+          listagens!
+        </p>
+
+        <div class="nav-buttons">
+          <a href="index.html" class="nav-button prev"
+            >&lt; Anterior: Recuperar Elementos</a
+          >
+          <a href="modificar_elementos.html" class="nav-button next"
+            >Próximo: Modificar Elementos &gt;</a
+          >
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 Sua Turma - Lab365 / SENAI</p>
+        <p>Semana 5 - Demonstração DOM</p>
+      </footer>
+    </div>
+    <script src="./scripts/listar_elementos.js"></script>
+  </body>
+</html>
