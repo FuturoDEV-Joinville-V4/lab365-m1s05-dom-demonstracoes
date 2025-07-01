@@ -1,4 +1,4 @@
-# 💻 lab365-m1s05-dom-demonstracoes
+# 💻 dom-aula-1: Demonstrações de Manipulação do DOM (M1S05)
 
 Bem-vindos ao repositório dos exemplos e demonstrações de **Manipulação do DOM (Document Object Model)** do LAB365 - SENAI!
 
