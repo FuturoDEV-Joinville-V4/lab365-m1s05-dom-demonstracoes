@@ -70,15 +70,29 @@
           >
             Conteúdo HTML original.
           </div>
-
+          <ul class="lista-adicionar">
+            <li>item padrao</li>
+          </ul>
           <label for="input-exemplo">Campo de Texto:</label>
           <input
             type="text"
             id="input-exemplo"
             value="Valor Inicial do Input"
           />
+          <br />
+          <select name="tipo">
+            <option value="1">Item 1</option>
+            <option value="2">Item 2</option>
+            <option value="3">Item 3</option>
+          </select>
+          <br />
 
-          <button id="btn-modificar-tudo" style="margin-top: 20px">
+          <button
+            id="btn-modificar-tudo"
+            class="nav-button"
+            style="margin-top: 20px"
+            onclick="adicionarItem()"
+          >
             Clique para Modificar
           </button>
         </div>
