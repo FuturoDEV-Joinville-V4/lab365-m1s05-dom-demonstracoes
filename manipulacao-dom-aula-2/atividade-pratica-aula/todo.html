@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício DOM: Lista de Tarefas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <span class="highlight-lab">LAB365</span> -
+          <span class="highlight-senai">SENAI</span>
+        </h1>
+        <h2>Lista de Tarefas</h2>
+      </header>
+
+      <main class="main-content">
+        <div class="practice-section">
+          <h3 class="section-title">Minha Lista de Tarefas</h3>
+
+          <div class="todo-input-section">
+            <input type="text" id="taskInput" placeholder="Nova tarefa..." />
+            <button id="addTaskBtn">Adicionar Tarefa</button>
+          </div>
+
+          <ul id="taskList">
+            <li class="task-item">
+              <span>Aprender DOM com JavaScript</span>
+              <button class="remove-btn">Remover</button>
+            </li>
+            <li class="task-item completed">
+              <span>Verificar o README do projeto</span>
+              <button class="remove-btn">Remover</button>
+            </li>
+          </ul>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 Sua Turma - Lab365 / SENAI</p>
+        <p>Semana 5 - Atividade DOM</p>
+      </footer>
+    </div>
+    <script src="./scripts/todo-list.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade DOM: Criar e Remover Elementos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <span class="highlight-lab">LAB365</span> -
+          <span class="highlight-senai">SENAI</span>
+        </h1>
+        <h2>Atividade DOM: Criar e Remover Elementos</h2>
+      </header>
+
+      <main class="main-content">
+        <blockquote class="objective-highlight">
+          <strong>Objetivo:</strong> Criar e remover elementos HTML
+          dinamicamente na página usando JavaScript.
+        </blockquote>
+
+        <p>
+          <strong>Sua Tarefa (no <code>atividade_estrutura.js</code>):</strong>
+        </p>
+        <ol class="task-list">
+          <li>
+            Selecione os botões "Adicionar Parágrafo"
+            (<code>id="btnAddParagraph"</code>) e "Remover Último Parágrafo"
+            (<code>id="btnRemoveParagraph"</code>).
+          </li>
+          <li>
+            Selecione a área dinâmica (<code>id="area-dinamica"</code>) onde os
+            parágrafos serão adicionados/removidos.
+          </li>
+          <li>
+            **Para o botão "Adicionar Parágrafo":**
+            <ul>
+              <li>Adicione um <strong>ouvinte de evento de clique</strong>.</li>
+              <li>
+                Dentro da função, crie um novo elemento <code>&lt;p&gt;</code>.
+              </li>
+              <li>
+                Defina o <code>textContent</code> do novo parágrafo (ex:
+                "Parágrafo adicionado dinamicamente!").
+              </li>
+              <li>
+                Adicione o novo parágrafo como filho da
+                <code>div#area-dinamica</code>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            **Para o botão "Remover Último Parágrafo":**
+            <ul>
+              <li>Adicione um <strong>ouvinte de evento de clique</strong>.</li>
+              <li>
+                Dentro da função, verifique se a
+                <code>div#area-dinamica</code> possui algum parágrafo (ou
+                filho).
+              </li>
+              <li>
+                Se sim, remova o **último filho** da
+                <code>div#area-dinamica</code>.
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <div class="practice-section">
+          <h3 class="section-title">Área de Manipulação Dinâmica</h3>
+
+          <div class="button-group">
+            <button class="btn btn-primary" id="btnAddParagraph">
+              Adicionar Parágrafo
+            </button>
+            <button class="btn btn-danger" id="btnRemoveParagraph">
+              Remover Último Parágrafo
+            </button>
+          </div>
+
+          <div
+            id="area-dinamica"
+            style="
+              min-height: 100px;
+              border: 1px dashed #ccc;
+              padding: 10px;
+              margin-top: 20px;
+              text-align: center;
+              color: #6c757d;
+            "
+          >
+            <p>Nenhum parágrafo ainda. Adicione um!</p>
+          </div>
+        </div>
+
+        <p class="instruction">
+          Escreva o código JavaScript no arquivo
+          <code>atividade_estrutura.js</code>. Acompanhe os resultados e
+          possíveis erros no console (<code>F12</code>).
+        </p>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 Sua Turma - Lab365 / SENAI</p>
+        <p>Semana 5 - Atividade DOM</p>
+      </footer>
+    </div>
+    <script src="./scripts/atividade_estrutura.js"></script>
+  </body>
+</html>
