@@ -12,8 +12,8 @@ Aqui você encontrará subdiretórios, cada um dedicado a um tema ou conjunto de
 
 - **`dom-aula-1/`**: Contém os exemplos e demonstrações práticas de **Manipulação do DOM (Document Object Model)** em JavaScript.
   - [Acesse o README específico de `dom-aula-1` para mais detalhes.](dom-aula-1/README.md)
-- `outros-topicos/` (Exemplo: aguardando criação de outros módulos)
-- `exercicios/` (Exemplo: para exercícios propostos)
+- `manipulacao-dom-aula-2/`: Contém os exemplos e demonstrações p´raticas de **Manipulação, Criação de Elementos, Adicionando classes e estilos** em Javascript.
+- [Acesse o diretório.](manipulacao-dom-aula-2/)
 
 ---
 
