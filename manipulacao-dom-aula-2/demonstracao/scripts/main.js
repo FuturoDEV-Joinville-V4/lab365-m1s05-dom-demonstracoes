@@ -7,7 +7,7 @@ const response = {
       "category": "beauty",
       "price": 9.99,
       "images": [
-        "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
+        "https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blt78bf95cc2f846f82/65fb2bd4ff8167040a980bf2/banner-head-products-(7).png"
       ]
     },
     {
@@ -17,7 +17,7 @@ const response = {
       "category": "beauty",
       "price": 19.99,
       "images": [
-        "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/1.webp"
+        "https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blt78bf95cc2f846f82/65fb2bd4ff8167040a980bf2/banner-head-products-(7).png"
       ]
     },
     {
@@ -27,7 +27,7 @@ const response = {
       "category": "beauty",
       "price": 14.99,
       "images": [
-        "https://cdn.dummyjson.com/product-images/beauty/powder-canister/1.webp"
+        "https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blt78bf95cc2f846f82/65fb2bd4ff8167040a980bf2/banner-head-products-(7).png"
       ]
     },
     {
@@ -37,7 +37,7 @@ const response = {
       "category": "beauty",
       "price": 12.99,
       "images": [
-        "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/1.webp"
+        "https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blt78bf95cc2f846f82/65fb2bd4ff8167040a980bf2/banner-head-products-(7).png"
       ]
     },
     {
@@ -47,7 +47,7 @@ const response = {
       "category": "beauty",
       "price": 8.99,
       "images": [
-        "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp"
+        "https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blt78bf95cc2f846f82/65fb2bd4ff8167040a980bf2/banner-head-products-(7).png"
       ]
     },
     {
@@ -57,7 +57,7 @@ const response = {
       "category": "fragrances",
       "price": 49.99,
       "images": [
-        "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp"
+        "https://eu-images.contentstack.com/v3/assets/blt9ca8222b5acaa556/blt78bf95cc2f846f82/65fb2bd4ff8167040a980bf2/banner-head-products-(7).png"
       ]
     }
   ],
@@ -65,3 +65,69 @@ const response = {
   "skip": 0,
   "limit": 6
 };
+
+/// elemento pai da lista => #list-products
+/**
+ *  <div class="product-item">
+              <img
+                src="https://macfinder.co.uk/wp-content/uploads/2022/12/img-MacBook-Pro-Retina-14-Inch-72383-scaled-1250x1250.jpg"
+                alt="Macbook Pro Retina 14 Inch"
+                height="236"
+              />
+              <div>
+                <div class="product-details">
+                  <strong>Macbook Pro Retina 14 Inch</strong>
+                  <span
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quod, delectus!</span
+                  >
+                </div>
+                <div class="product-price">
+                  <strong>R$ 7.999,00</strong>
+                  <button>
+                    <img
+                      src="./assets/icons/cart.svg"
+                      height="20"
+                      alt="Icone de carrinho"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+ */
+// div => product-item
+// img => src="https://macfinder.co.uk/wp-content/uploads/2022/12/img-MacBook-Pro-Retina-14-Inch-72383-scaled-1250x1250.jpg"
+          // alt="Macbook Pro Retina 14 Inch"
+          // height="236"
+const listaElemento = document.querySelector('#list-products')
+
+response.products.forEach((produto) => {
+    /** 
+     * Construindo elementos
+     */
+    // container
+    const containerElemento = document.createElement('div')
+    containerElemento.classList.add("product-item")
+    // img
+    const imagemElemento = document.createElement('img')
+    // adicionar os atributos
+    imagemElemento.setAttribute('src', produto.images[0])
+    imagemElemento.setAttribute('alt', produto.title)
+    imagemElemento.setAttribute('height', '236')
+
+    // adicionar a imagem no container
+    containerElemento.appendChild(imagemElemento)
+
+    // titulo
+    // <div class="product-details">
+    const detalheProdutoElemento = document.createElement('div')
+    detalheProdutoElemento.classList.add("product-details")
+
+    const strongElemento = document.createElement("strong")
+    strongElemento.textContent = produto.title;
+
+    detalheProdutoElemento.appendChild(strongElemento)
+    containerElemento.appendChild(detalheProdutoElemento)
+    // adicionar o elemento na lista
+    listaElemento.appendChild(containerElemento)
+})

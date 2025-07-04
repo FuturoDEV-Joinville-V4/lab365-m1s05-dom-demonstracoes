@@ -25,22 +25,36 @@
       <main class="main-content">
         <div class="practice-section">
           <h3 class="section-title">Minha Lista de Tarefas</h3>
-
           <div class="todo-input-section">
             <input type="text" id="taskInput" placeholder="Nova tarefa..." />
-            <button id="addTaskBtn">Adicionar Tarefa</button>
+            <button id="addTaskBtn" onclick="adicionarItem()">
+              Adicionar Tarefa
+            </button>
           </div>
 
           <ul id="taskList">
-            <li class="task-item">
+            <!-- <li>Utlizar CLASSLIST</li> -->
+            <li
+              class="task-item"
+              data-indice="2"
+              onclick="toggleCompleted(this)"
+            >
               <span>Aprender DOM com JavaScript</span>
-              <button class="remove-btn">Remover</button>
+              <button class="remove-btn" onclick="removerTask(this)">
+                Remover
+              </button>
             </li>
             <li class="task-item completed">
               <span>Verificar o README do projeto</span>
               <button class="remove-btn">Remover</button>
             </li>
           </ul>
+          <button onclick="removerItem('primeiro')" class="btn btn-danger">
+            Remover primeiro item
+          </button>
+          <button onclick="removerItem('ultimo')" class="btn btn-danger">
+            Remover ultimo item
+          </button>
         </div>
       </main>
 
