@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo: Abrir Arquivo com Diálogo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f0f4f8; /* Fundo claro e suave */
+        color: #343a40;
+        text-align: center;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        max-width: 600px;
+        width: 90%;
+        text-align: center;
+      }
+
+      h1 {
+        color: #007bff; /* Azul primário */
+        margin-bottom: 20px;
+        font-size: 2em;
+      }
+
+      p {
+        margin-bottom: 25px;
+        line-height: 1.6;
+      }
+
+      /* --- Estilo do Ícone de Arquivo (para ser "clicado duas vezes") --- */
+      .file-icon {
+        display: inline-flex; /* Para que o flexbox funcione e ocupe o espaço necessário */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 15px;
+        margin-top: 30px;
+        border: 2px solid #ced4da; /* Borda sutil */
+        border-radius: 8px;
+        background-color: #fefefe;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        width: 120px; /* Largura fixa para o ícone */
+        height: 120px; /* Altura fixa */
+      }
+
+      .file-icon:hover {
+        transform: translateY(-3px); /* Efeito de "levantar" */
+        box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .file-icon:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .file-icon span.icon {
+        font-size: 60px; /* Tamanho grande para o emoji de arquivo */
+        margin-bottom: 10px;
+        line-height: 1; /* Remove espaço extra da linha */
+      }
+
+      .file-icon span.file-name {
+        font-size: 0.9em;
+        color: #555;
+        font-weight: 500;
+      }
+
+      /* --- Estilo da Tag <dialog> (A janela que abre) --- */
+      dialog {
+        border: 2px solid #007bff; /* Borda da cor primária */
+        border-radius: 10px;
+        padding: 0; /* Remover padding padrão para controlar com o conteúdo */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
+        width: 90%;
+        max-width: 500px;
+        overflow: hidden; /* Garante que o conteúdo não vaze */
+      }
+
+      /* Estilo para o pseudo-elemento ::backdrop (o fundo escuro quando o diálogo está aberto) */
+      dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+      }
+
+      .dialog-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #007bff; /* Cor da barra de título */
+        color: white;
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+      .dialog-header button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5em;
+        cursor: pointer;
+        padding: 0; /* Remove padding */
+        line-height: 1; /* Alinha o 'x' */
+        transition: color 0.2s ease;
+      }
+
+      .dialog-header button:hover {
+        color: #ffcccc; /* Um vermelho claro no hover do 'x' */
+      }
+
+      .dialog-content {
+        padding: 25px 20px;
+        text-align: left;
+        line-height: 1.7;
+        color: #333;
+      }
+
+      .dialog-content h2 {
+        color: #0056b3;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+
+      .dialog-content p strong {
+        color: #dc3545; /* Destaque em vermelho */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Simulação: Abrindo um Arquivo no Desktop</h1>
+      <p>
+        Dê um **clique duplo** no ícone de arquivo abaixo para "abrir" o
+        documento. Este exemplo demonstra como manipular a tag
+        <code>&lt;dialog&gt;</code> e eventos de mouse para criar interações.
+      </p>
+
+      <div id="fileIcon" class="file-icon">
+        <span class="icon">📄</span>
+        <span class="file-name">Documento Importante.txt</span>
+      </div>
+    </div>
+
+    <dialog id="myDialog">
+      <div class="dialog-header">
+        <span>Documento Importante.txt</span>
+        <button id="closeDialogBtn">&times;</button>
+      </div>
+      <div class="dialog-content">
+        <h2>Conteúdo do Documento</h2>
+        <p>
+          Este é o conteúdo do arquivo que você "abriu". Aqui poderíamos ter
+          informações detalhadas, instruções, ou qualquer outro texto. A tag
+          <code>&lt;dialog&gt;</code> é excelente para pop-ups de informação,
+          formulários modais ou confirmações, garantindo que o usuário interaja
+          com ela antes de continuar.
+        </p>
+        <p>
+          <strong>Propriedades usadas:</strong>
+          <code>dialog.showModal()</code> para abrir e
+          <code>dialog.close()</code> para fechar. O evento de abertura é o
+          <code>dblclick</code>.
+        </p>
+      </div>
+    </dialog>
+
+    <script>
+      const fileButtonIconElement = document.querySelector("#fileIcon");
+      const dialogElement = document.querySelector("dialog");
+      const buttonClose = document.querySelector("#closeDialogBtn");
+
+      fileButtonIconElement.addEventListener("dblclick", () => {
+        dialogElement.showModal();
+      });
+
+      buttonClose.addEventListener("click", () => {
+        dialogElement.close();
+      });
+
+      dialogElement.addEventListener("click", (event) => {
+        if (event.target === dialogElement) {
+          dialogElement.close();
+        }
+      });
+    </script>
+  </body>
+</html>

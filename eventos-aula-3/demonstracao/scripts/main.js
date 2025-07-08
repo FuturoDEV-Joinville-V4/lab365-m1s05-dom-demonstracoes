@@ -1,13 +1,3 @@
-/**
- * @typedef {object} Product
- * @property {number} id - O identificador único do produto.
- * @property {string} title - O título/nome do produto.
- * @property {string} description - A descrição detalhada do produto.
- * @property {string} category - A categoria à qual o produto pertence.
- * @property {number} price - O preço do produto.
- * @property {string[]} images - Um array de URLs das imagens do produto.
- */
-
 const response = {
   products: [
     {
@@ -76,6 +66,39 @@ const response = {
   "limit": 6
 };
 
+/// elemento pai da lista => #list-products
+/**
+ *  <div class="product-item">
+              <img
+                src="https://macfinder.co.uk/wp-content/uploads/2022/12/img-MacBook-Pro-Retina-14-Inch-72383-scaled-1250x1250.jpg"
+                alt="Macbook Pro Retina 14 Inch"
+                height="236"
+              />
+              <div>
+                <div class="product-details">
+                  <strong>Macbook Pro Retina 14 Inch</strong>
+                  <span
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quod, delectus!</span
+                  >
+                </div>
+                <div class="product-price">
+                  <strong>R$ 7.999,00</strong>
+                  <button>
+                    <img
+                      src="./assets/icons/cart.svg"
+                      height="20"
+                      alt="Icone de carrinho"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+ */
+// div => product-item
+// img => src="https://macfinder.co.uk/wp-content/uploads/2022/12/img-MacBook-Pro-Retina-14-Inch-72383-scaled-1250x1250.jpg"
+          // alt="Macbook Pro Retina 14 Inch"
+          // height="236"
 const listaElemento = document.querySelector('#list-products')
 
 response.products.forEach((produto) => {

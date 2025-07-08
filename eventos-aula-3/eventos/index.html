@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demonstração DOM: Eventos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <span class="highlight-lab">LAB365</span> -
+          <span class="highlight-senai">SENAI</span>
+        </h1>
+        <h2>Demonstração DOM: Eventos e Interação</h2>
+      </header>
+
+      <main class="main-content">
+        <blockquote class="objective-highlight">
+          <strong>Objetivo:</strong> Demonstrar os principais tipos de eventos
+          do DOM e como o JavaScript pode "ouvir" e responder a interações do
+          usuário.
+        </blockquote>
+
+        <p class="instruction">
+          Acompanhe no console (<code>F12</code>) os resultados das interações e
+          os logs dos eventos!
+        </p>
+
+        <div class="event-grid">
+          <div class="event-box">
+            <h3>Evento de Clique (<code>click</code>)</h3>
+            <button id="btnClick">Clique Aqui!</button>
+            <p id="outputClick" class="event-output">Nenhum clique ainda.</p>
+          </div>
+
+          <div class="event-box">
+            <h3>
+              Evento de Mouse (<code>mouseover</code> / <code>mouseout</code>)
+            </h3>
+            <div id="divMouse" class="mouse-area">Passe o mouse aqui!</div>
+            <p id="outputMouse" class="event-output">Mouse fora.</p>
+          </div>
+
+          <div class="event-box">
+            <h3>Evento de Input (<code>input</code> / <code>change</code>)</h3>
+            <input type="text" id="inputTexto" placeholder="Digite algo..." />
+            <p id="outputInput" class="event-output">Você digitou:</p>
+          </div>
+
+          <div class="event-box">
+            <h3>Evento de Formulário (<code>submit</code>)</h3>
+            <form id="myForm">
+              <input
+                type="text"
+                name="nome"
+                id="inputNomeForm"
+                placeholder="Seu nome"
+              />
+              <input
+                type="text"
+                name="nome"
+                id="inputNomeForm2"
+                placeholder="Sobrenome"
+              />
+              <button>Enviar Formulário</button>
+              <p id="outputForm" class="event-output">
+                Formulário não enviado.
+              </p>
+            </form>
+          </div>
+
+          <div class="event-box">
+            <h3>
+              Eventos de Teclado (<code>keydown</code> / <code>keyup</code>)
+            </h3>
+            <input
+              type="text"
+              id="inputTeclado"
+              placeholder="Pressione teclas aqui..."
+            />
+            <p id="outputTeclado" class="event-output">Última tecla:</p>
+          </div>
+
+          <div class="event-box">
+            <h3>Eventos de Foco (<code>focus</code> / <code>blur</code>)</h3>
+            <input type="text" id="inputFocus" placeholder="Clique e saia..." />
+            <p id="outputFoco" class="event-output">Status: Fora de foco.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2025 Sua Turma - Lab365 / SENAI</p>
+        <p>Semana 5 - Demonstração DOM (Eventos)</p>
+      </footer>
+    </div>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
